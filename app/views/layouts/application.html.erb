@@ -6,10 +6,33 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   </head>
 
   <body>
-  <nav> <%= link_to 'Home', root_path %> <%= link_to 'Blog', blog_path %></nav>
-      <%= yield %>'
+  	<div class="container">
+  	  <div class="page-header">
+  	
+	  		<ur class="nav nav-pills pull-right"> 
+	  			<li><%= link_to 'Home', root_path %></li>
+	  			<li><%= link_to 'Blog', blog_path %></li>
+	  			<li><%= link_to 'About', about_path %></li>
+	  		</ur>
+
+	  		<h1>
+	  	  	<%= link_to 'Hello, I am Henry!', root_path %>
+	  	  </h1>
+	  	</div>
+
+	  	<div class="row">
+    		<div class="col-md-6 col-md-offset-3">
+      		<%= yield %>
+      	</div>
+      </div>
+
+
+    </div>
   </body>
 </html>
