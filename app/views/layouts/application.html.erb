@@ -19,15 +19,33 @@
 	  			<li><%= link_to 'Home', root_path %></li>
 	  			<li><%= link_to 'Blog', blog_path %></li>
 	  			<li><%= link_to 'About', about_path %></li>
+	  			<% if user_signed_in? %>
+                      <li><%= link_to "Dashboard", posts_path %></li>
+
+	  				<li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+	  			<% else %>
+	  				<li><%= link_to 'Login', new_user_session_path %></li>
+
+	  				<% end %>
+
 	  		</ur>
 
 	  		<h1>
-	  	  	<%= link_to 'Hello, I am Henry!', root_path %>
+	  	  	<%= link_to 'Hey, I am Henry!', root_path, class: 'brand' %>
 	  	  </h1>
 	  	</div>
 
 	  	<div class="row">
-    		<div class="col-md-6 col-md-offset-3">
+    	 <div class="col-md-6 col-md-offset-3">
+       <% if notice.present? %>
+    	 <p class="alert alert-info"><%= notice %></p>
+       <% end %>
+       <% if alert.present? %>
+       <p class="alert alert-info"><%= alert %></p>
+
+       <% end %>
+
+       
       		<%= yield %>
       	</div>
       </div>

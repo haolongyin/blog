@@ -1,4 +1,8 @@
+<% if user_signed_in? %>
+<p>here is the list of the post to manage</p>
+
+<% else %>
 <div class="page header">
 <h1>Welcome!</h1>
 <p>This is the landing page for my blog, also my first try with Ruby on Rails!</p>
-<p>
+<% end %>
